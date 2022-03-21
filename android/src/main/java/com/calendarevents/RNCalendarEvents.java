@@ -1112,7 +1112,7 @@ public class RNCalendarEvents extends ReactContextBaseJavaModule implements Perm
         }
 
         event.putString("id", cursor.getString(0));
-        event.putMap("calendar", findCalendarById(cursor.getString(cursor.getColumnIndex("calendar_id"))));
+        //event.putMap("calendar", findCalendarById(cursor.getString(cursor.getColumnIndex("calendar_id"))));
         event.putString("title", cursor.getString(cursor.getColumnIndex("title")));
         event.putString("description", cursor.getString(2));
         event.putString("startDate", startDateUTC);
@@ -1120,7 +1120,7 @@ public class RNCalendarEvents extends ReactContextBaseJavaModule implements Perm
         event.putBoolean("allDay", allDay);
         event.putString("location", cursor.getString(6));
         event.putString("availability", availabilityStringMatchingConstant(cursor.getInt(9)));
-        event.putArray("attendees", (WritableArray) findAttendeesByEventId(cursor.getString(0)));
+        //event.putArray("attendees", (WritableArray) findAttendeesByEventId(cursor.getString(0)));
 
         if (cursor.getInt(10) > 0) {
             event.putArray("alarms", findReminderByEventId(cursor.getString(0), Long.parseLong(cursor.getString(3))));
